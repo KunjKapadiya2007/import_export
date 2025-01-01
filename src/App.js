@@ -1,8 +1,16 @@
 import React from 'react'
+import Contact from './pages/contact'
+import Header from './component/globle/header'
+import Footer from './component/globle/footer'
+import GetTeach from './component/contact/getTeach'
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+      <Header />
+      <Contact />
+      {/* <Footer /> */}
+    </>
   )
 }
 
