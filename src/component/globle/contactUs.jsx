@@ -8,14 +8,10 @@ function ContactUs({ backgroundImage, title, subtitle, textColor, height, width 
                 backgroundImage: `url(${backgroundImage})`,
                 width: width || "100%",
                 height: height || "auto",
-                padding:{md:"144px 0",xs:"80px 0"},
+                py: { xs: 10, sm: 18 },
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "start",
                 color: textColor || "#fff",
             }}
         >
@@ -27,7 +23,7 @@ function ContactUs({ backgroundImage, title, subtitle, textColor, height, width 
                             fontSize: { xs: '30px', sm: '42px' },
                             fontWeight: 100,
                             textTransform: 'uppercase',
-                            // mb: 2,
+                            mb: 2,
                         }}
                     >
                         {subtitle}
