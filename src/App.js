@@ -1,10 +1,8 @@
-import React from 'react';
-import {  Routes, Route } from "react-router-dom";
-import About from "./pages/about";
-import Contact from './pages/contact';
-import Header from './component/globle/header';
-import Footer from './component/globle/footer';
-import GetinTouch from './component/contact/getinTouch';
+import React from 'react'
+import Contact from './pages/contact'
+import Header from './component/globle/header'
+import Footer from './component/globle/footer'
+import GetinTouch from './component/contact/getinTouch'
 import Products from "./pages/products";
 import Home from "./pages/home";
 
