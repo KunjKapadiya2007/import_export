@@ -32,12 +32,24 @@ import bg29 from '../../assets/image/pulses/img7.jpg';
 import bg30 from '../../assets/image/pulses/img8.png';
 import bg31 from '../../assets/image/pulses/img9.png';
 import bg32 from '../../assets/image/pulses/img10.jpg';
+import HeroSection from "../globle/heroSection";
+import bgimg from "../../assets/image/contact/contact_banner.webp";
+import jaggery from "../../assets/image/products/jaggery_molasses.jpg";
+import rice from "../../assets/image/products/Grains.png";
+import flour from "../../assets/image/products/wheat_flour.png";
+import vegetable from "../../assets/image/products/vegetables.png";
+import sweetcorn from "../../assets/image/products/240916_sweetcorn.png";
+import pulses from "../../assets/image/products/Pulses.png";
+
+
 
 function Jaggery({name}) {
     const products =
         [
             {
             url: 'jaggery',
+            title: 'Jaggery And Molasses',
+            img : jaggery,
             items: [
                 {
                     img: bg1,
@@ -63,6 +75,8 @@ function Jaggery({name}) {
         },
             {
             url: 'rice',
+                title:'rice',
+                img : rice,
             items: [
                 {
                     img: bg12,
@@ -84,6 +98,8 @@ function Jaggery({name}) {
         },
             {
             url: 'wheat-flour',
+                title:'wheat flour',
+                img : flour,
             items: [
                 {
                     img: bg15,
@@ -99,6 +115,8 @@ function Jaggery({name}) {
         },
             {
             url: 'vegetables',
+                title:'Vegetables',
+                img : vegetable,
             items: [
                 {
                     img: bg18,
@@ -115,6 +133,8 @@ function Jaggery({name}) {
         },
             {
             url: 'sweet-corns',
+                title:'SweetCorns',
+                img : sweetcorn,
             items: [
                 {
                     img: bg20,
@@ -130,6 +150,8 @@ function Jaggery({name}) {
         },
             {
             url: 'pulses',
+                title:'Pulses',
+                img : pulses,
             items: [
                 {
                     img: bg23,
@@ -189,6 +211,14 @@ const singleProducts = products.find((item)=>(item.url === name))
 
     return (
         <>
+            <HeroSection
+                backgroundImage={singleProducts.img}
+                title={singleProducts.title}
+                subtitle="Ratan House"
+                textColor="#333"
+                height="200px"
+                width="100%"
+            />
             <Box sx={{padding: {md: "140px 0", xs: "70px 0"}, position: "relative"}}>
                 <Container>
                     <Grid container spacing={4}>

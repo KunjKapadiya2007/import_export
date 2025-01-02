@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
 
-function ContactUs({ backgroundImage, title, subtitle, textColor, height, width }) {
+function HeroSection({ backgroundImage, title, subtitle, textColor, height, width }) {
     return (
         <Box
             sx={{
@@ -31,9 +31,10 @@ function ContactUs({ backgroundImage, title, subtitle, textColor, height, width 
                     <Typography
                         variant="h1"
                         sx={{
-                            fontSize: { xs: '35px', sm: '50px' },
+                            fontSize: { xs: '35px', sm: '50px'},
                             fontWeight: 800,
                             textTransform: 'uppercase',
+                            width: {md:"650px" , sm:"390px" , xs:"280px"}
                         }}
                     >
                         {title}
@@ -44,4 +45,4 @@ function ContactUs({ backgroundImage, title, subtitle, textColor, height, width 
     );
 }
 
-export default ContactUs;
+export default HeroSection;

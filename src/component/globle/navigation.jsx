@@ -15,7 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Logo from '../../assets/image/globle/logo.webp';
 
-const Header = () => {
+const Navigation = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -57,7 +57,9 @@ const Header = () => {
                     {/* Logo Section */}
                     <Grid item xs={6} sm={2}>
                         <Box sx={{width: {xs: '80px', sm: '100px'}}}>
-                            <Typography component="img" src={Logo} alt="Logo" sx={{width: '100%', height: 'auto'}}/>
+                            <Link to="/">
+                            <Typography component="img" src={Logo} alt="Logo"  sx={{width: '100%', height: 'auto'}}/>
+                            </Link>
                         </Box>
                     </Grid>
 
@@ -354,4 +356,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navigation;

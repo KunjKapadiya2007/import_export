@@ -1,13 +1,13 @@
 import React from 'react'
 import Info from '../component/contact/info'
-import ContactUs from '../component/globle/contactUs'
+import HeroSection from '../component/globle/heroSection'
 import GetinTouch from '../component/contact/getinTouch'
 import bgimg from "../assets/image/contact/contact_banner.webp";
 
 const Contact = () => {
     return (
         <>
-            <ContactUs
+            <HeroSection
                 backgroundImage={bgimg}
                 title="Contact Us"
                 subtitle="Ratan House"
