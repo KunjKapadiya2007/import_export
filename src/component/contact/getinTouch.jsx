@@ -26,7 +26,6 @@ const GetinTouch = () => {
         <Box>
             <Grid container >
                 <Grid item xs={12} sm={6}>
-                    {/* <Box> */}
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.4856623108612!2d72.88694027380323!3d21.212581681442394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f7a31c50185%3A0x87232d67295bc2a3!2sSavlia%20Cir%2C%20Sanman%20Society%2C%20Yoginagar%20Society%2C%20Surat%2C%20Gujarat%20395010!5e0!3m2!1sen!2sin!4v1735709773302!5m2!1sen!2sin"
                         width="100%"
@@ -36,8 +35,7 @@ const GetinTouch = () => {
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
-                    {/* </Box> */}
-                </Grid>
+                    </Grid>
                 <Grid item xs={12} sm={6}>
                     <Box sx={{ backgroundColor: '#333', color: '#fff', py: { xs: 8, sm: 16 }, px: { xs: 0.3, sm: 2.5 }, display: 'flex', justifyContent: 'center', }} >
                         <Container maxWidth="sm">
