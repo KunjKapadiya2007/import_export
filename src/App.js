@@ -22,10 +22,8 @@ const App = () => {
             title="Contact Us"
             subtitle="Ratan House"
             textColor="#ffffff"
-            styles={{
-                py: { xs: 12, sm: 24 },
-                textAlign: "center",
-            }}
+            height="200px"
+            width="100%"
         />
 
         <Routes>
