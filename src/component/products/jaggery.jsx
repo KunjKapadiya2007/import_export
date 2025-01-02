@@ -11,11 +11,33 @@ import bg8 from '../../assets/image/products/img8.jpg';
 import bg9 from '../../assets/image/products/img9.jpg';
 import bg10 from '../../assets/image/products/img10.png';
 import bg11 from '../../assets/image/products/img11.png';
+import bg12 from '../../assets/image/Rice/img1.png';
+import bg13 from '../../assets/image/Rice/img2.jpg';
+import bg14 from '../../assets/image/Rice/img3.png';
+import bg15 from '../../assets/image/flour/img1.png';
+import bg16 from '../../assets/image/flour/img2.png';
+import bg17 from '../../assets/image/flour/img3.png';
+import bg18 from '../../assets/image/vegetables/img1.jpg';
+import bg19 from '../../assets/image/vegetables/img2.jpg';
+import bg20 from '../../assets/image/sweet corns/img1.png';
+import bg21 from '../../assets/image/sweet corns/img2.png';
+import bg22 from '../../assets/image/sweet corns/img3.png';
+import bg23 from '../../assets/image/pulses/img1.jpg';
+import bg24 from '../../assets/image/pulses/img2.png';
+import bg25 from '../../assets/image/pulses/img3.jpg';
+import bg26 from '../../assets/image/pulses/img4.jpg';
+import bg27 from '../../assets/image/pulses/img5.jpg';
+import bg28 from '../../assets/image/pulses/img6.jpg';
+import bg29 from '../../assets/image/pulses/img7.jpg';
+import bg30 from '../../assets/image/pulses/img8.png';
+import bg31 from '../../assets/image/pulses/img9.png';
+import bg32 from '../../assets/image/pulses/img10.jpg';
 
-function Jaggery(props) {
+function Jaggery({name}) {
     const products =
-        {
-            url: 'jaggery_molasses',
+        [
+            {
+            url: 'jaggery',
             items: [
                 {
                     img: bg1,
@@ -38,18 +60,139 @@ function Jaggery(props) {
                     description: "Jaggery And Molasses",
                 },
             ]
-        }
+        },
+            {
+            url: 'rice',
+            items: [
+                {
+                    img: bg12,
+                    title: "Rice IR 64",
+                    description: "Rice",
+                },
+                {
+                    img: bg13,
+                    title: "Non Basmati",
+                    description: "Rice",
+                },
+                {
+                    img: bg14,
+                    title: "Basmati Rice",
+                    description: "Rice",
+                },
 
-    // const products = [
-    //
-    // ];
+            ]
+        },
+            {
+            url: 'wheat-flour',
+            items: [
+                {
+                    img: bg15,
+                },
+                {
+                    img: bg16,
+                },
+                {
+                    img: bg17,
+                },
+
+            ]
+        },
+            {
+            url: 'vegetables',
+            items: [
+                {
+                    img: bg18,
+                    title: "Potato",
+                    description: "Vegetables",
+                },
+                {
+                    img: bg19,
+                    title: "Onion",
+                    description: "Vegetables",
+                },
+
+            ]
+        },
+            {
+            url: 'sweet-corns',
+            items: [
+                {
+                    img: bg20,
+                },
+                {
+                    img: bg21,
+                },
+                {
+                    img: bg22,
+                },
+
+            ]
+        },
+            {
+            url: 'pulses',
+            items: [
+                {
+                    img: bg23,
+                    title: "Chickpeas / Garbanzo Beans",
+                    description: "Pulses",
+                },
+                {
+                    img: bg24,
+                    title: "Peas",
+                    description: "Pulses",
+                },
+                {
+                    img: bg25,
+                    title: "Kidney beans",
+                    description: "Pulses",
+                },
+                {
+                    img: bg26,
+                    title: "Soya bean",
+                    description: "Pulses",
+                },
+                {
+                    img: bg27,
+                    title: "Black-eyed beans / Cowpea",
+                    description: "Pulses",
+                },
+                {
+                    img: bg28,
+                    title: "Horse gram",
+                    description: "Pulses",
+                },
+                {
+                    img: bg29,
+                    title: "Masoor Dal / Red Lentil",
+                    description: "Pulses",
+                },
+                {
+                    img: bg30,
+                    title: "Green gram / Mung bean",
+                    description: "Pulses",
+                },
+                {
+                    img: bg31,
+                    title: "Chana Dal",
+                    description: "Pulses",
+                },
+                {
+                    img: bg32,
+                    title: "Urad Dal Split",
+                    description: "Pulses",
+                },
+            ]
+        }
+        ]
+
+const singleProducts = products.find((item)=>(item.url === name))
 
     return (
         <>
             <Box sx={{padding: {md: "140px 0", xs: "70px 0"}, position: "relative"}}>
                 <Container>
                     <Grid container spacing={4}>
-                        {products.map((item, index) => (
+                        {singleProducts?.items?.map((item, index) => (
                             <Grid item xs={12} sm={6} md={4} key={index}>
                                 <Box
                                     sx={{
@@ -76,7 +219,6 @@ function Jaggery(props) {
                                             sm: "55px 74px",
                                             xs: "60px 60px"
                                         },
-
                                     }}>
                                         <img
                                             src={item.img}
@@ -95,7 +237,11 @@ function Jaggery(props) {
                                             marginBottom: "5px",
                                             textAlign: "start",
                                             fontSize: "16px",
-                                            fontWeight: "700px",
+                                            fontWeight: "700",
+                                            transition: ".5s",
+                                            '&:hover': {
+                                                color: "#f8c311",
+                                            }
                                         }}>
                                             {item.title}
                                         </Box>
@@ -103,7 +249,7 @@ function Jaggery(props) {
                                             textAlign: "start",
                                             lineHeight: "1.4",
                                             fontWeight: "400",
-                                            fontSize: "1.4rem"
+                                            fontSize: "14px"
                                         }}>
                                             {item.description}
                                         </Box>
@@ -232,8 +378,6 @@ function Jaggery(props) {
             </Box>
 
         </>
-
-
     );
 }
 

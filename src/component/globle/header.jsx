@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import {
     Box,
     Button,
@@ -10,7 +10,7 @@ import {
     List,
     ListItem,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Logo from '../../assets/image/globle/logo.webp';
@@ -18,6 +18,8 @@ import Logo from '../../assets/image/globle/logo.webp';
 const Header = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
+
+    const navigate = useNavigate();
 
     const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown
 
@@ -39,23 +41,23 @@ const Header = () => {
     };
 
     const navLinks = [
-        { label: 'Home', href: '#' },
-        { label: 'About', href: '#' },
-        { label: 'Products', href: '#', dropdown: true },
-        { label: 'Certificate', href: '#' },
-        { label: 'Contact', href: '#' },
+        {label: 'Home', href: '/'},
+        {label: 'About', href: '/about'},
+        {label: 'Products', href: '/:name/products', dropdown: true},
+        {label: 'Certificate', href: '/certificate'},
+        {label: 'Contact', href: '/contact'},
     ];
 
     const isMegaMenuOpen = Boolean(anchorEl);
 
     return (
-        <Box sx={{ py: 1, backgroundColor: '#fff', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
+        <Box sx={{py: 1, backgroundColor: '#fff', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'}}>
             <Container>
                 <Grid container spacing={2} alignItems="center">
                     {/* Logo Section */}
                     <Grid item xs={6} sm={2}>
-                        <Box sx={{ width: { xs: '80px', sm: '100px' } }}>
-                            <Typography component="img" src={Logo} alt="Logo" sx={{ width: '100%', height: 'auto' }} />
+                        <Box sx={{width: {xs: '80px', sm: '100px'}}}>
+                            <Typography component="img" src={Logo} alt="Logo" sx={{width: '100%', height: 'auto'}}/>
                         </Box>
                     </Grid>
 
@@ -64,16 +66,16 @@ const Header = () => {
                         item
                         xs={0}
                         sm={10}
-                        sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'end', alignItems: 'center' }}
+                        sx={{display: {xs: 'none', md: 'flex'}, justifyContent: 'end', alignItems: 'center'}}
                     >
-                        <Box sx={{ display: 'flex', gap: 3 }}>
+                        <Box sx={{display: 'flex', gap: 3}}>
                             {navLinks.map((link, index) =>
                                 link.label === 'Products' ? (
                                     <Box
                                         key={index}
                                         onMouseEnter={handleMegaMenuOpen}
                                         onMouseLeave={handleMegaMenuClose}
-                                        sx={{ position: 'relative' }}
+                                        sx={{position: 'relative'}}
                                     >
                                         <Typography
                                             component="span"
@@ -104,7 +106,7 @@ const Header = () => {
                                             }}
                                         >
                                             {link.label}
-                                            <KeyboardArrowDownIcon sx={{ color: '#f8c311', ml: 0.5 }} />
+                                            <KeyboardArrowDownIcon sx={{color: '#f8c311', ml: 0.5}}/>
                                         </Typography>
 
                                         {isMegaMenuOpen && (
@@ -122,48 +124,48 @@ const Header = () => {
                                                 }}
                                             >
                                                 <List>
-        {[
-            { label: 'Jaggery & Molasses', path: '/jaggery' },
-            { label: 'Rice', path: '/rice' },
-            { label: 'Wheat Flour', path: '/wheat-flour' },
-            { label: 'Vegetables', path: '/vegetables' },
-            { label: 'Sweet Corns', path: '/sweet-corns' },
-            { label: 'Pulses', path: '/pulses' },
-        ].map((item, index) => (
-            <ListItem key={index}>
-                <Typography
-                    component={Link}
-                    to={item.path}
-                    sx={{
-                        textDecoration: 'none',
-                        color: '#fff',
-                        fontWeight: '500',
-                        display: 'inline-block',
-                        cursor: 'pointer',
-                        position: 'relative',
-                        '&::after': {
-                            content: '""',
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            width: '0%',
-                            height: '2px',
-                            backgroundColor: '#f8c311',
-                            transition: 'width 0.3s ease',
-                        },
-                        '&:hover::after': {
-                            width: '100%',
-                        },
-                        '&:hover': {
-                            color: '#f8c311',
-                        },
-                    }}
-                >
-                    {item.label}
-                </Typography>
-            </ListItem>
-        ))}
-    </List>
+                                                    {[
+                                                        {label: 'Jaggery & Molasses', path: '/jaggery/products'},
+                                                        {label: 'Rice', path: '/rice/products'},
+                                                        {label: 'Wheat Flour', path: '/wheat-flour/products'},
+                                                        {label: 'Vegetables', path: '/vegetables/products'},
+                                                        {label: 'Sweet Corns', path: '/sweet-corns/products'},
+                                                        {label: 'Pulses', path: '/pulses/products'},
+                                                    ].map((item, index) => (
+                                                        <ListItem key={index}>
+                                                            <Typography
+                                                                component={Link}
+                                                                to={item.path}
+                                                                sx={{
+                                                                    textDecoration: 'none',
+                                                                    color: '#fff',
+                                                                    fontWeight: '500',
+                                                                    display: 'inline-block',
+                                                                    cursor: 'pointer',
+                                                                    position: 'relative',
+                                                                    '&::after': {
+                                                                        content: '""',
+                                                                        position: 'absolute',
+                                                                        bottom: 0,
+                                                                        left: 0,
+                                                                        width: '0%',
+                                                                        height: '2px',
+                                                                        backgroundColor: '#f8c311',
+                                                                        transition: 'width 0.3s ease',
+                                                                    },
+                                                                    '&:hover::after': {
+                                                                        width: '100%',
+                                                                    },
+                                                                    '&:hover': {
+                                                                        color: '#f8c311',
+                                                                    },
+                                                                }}
+                                                            >
+                                                                {item.label}
+                                                            </Typography>
+                                                        </ListItem>
+                                                    ))}
+                                                </List>
                                             </Box>
                                         )}
                                     </Box>
@@ -216,21 +218,22 @@ const Header = () => {
                                     color: '#f8c311',
                                 },
                             }}
+                            onClick={() => navigate("/get-in-touch")}
                         >
                             GET IN TOUCH
                         </Button>
                     </Grid>
 
                     {/* Mobile Navigation */}
-                    <Grid item xs={6} sm={0} sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end', }} >
+                    <Grid item xs={6} sm={0} sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'flex-end',}}>
                         {/* Hamburger Icon */}
                         <IconButton onClick={toggleDrawer(true)}>
-                            <MenuIcon sx={{ color: '#555' }} />
+                            <MenuIcon sx={{color: '#555'}}/>
                         </IconButton>
 
                         {/* Mobile Drawer */}
                         <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-                            <Box sx={{ width: 300, p: 2 }}>
+                            <Box sx={{width: 300, p: 2}}>
                                 <List>
                                     {navLinks.map((link, index) =>
                                         link.dropdown ? (

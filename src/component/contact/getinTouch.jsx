@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button, Container, Grid, TextField, Typography } from '@mui/material';
 
-const GetTeach = () => {
+const GetinTouch = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -173,4 +173,4 @@ const GetTeach = () => {
     );
 };
 
-export default GetTeach;
+export default GetinTouch;
