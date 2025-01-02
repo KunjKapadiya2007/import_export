@@ -44,7 +44,7 @@ function AgricultureFarm() {
                                     <Typography
                                         component="span"
                                         sx={{
-                                            fontWeight: '100',
+                                            fontWeight: 100,
                                             fontSize: '40px',
                                             paddingLeft: '15px',
                                             color: '#333333',

@@ -54,7 +54,6 @@ const Header = () => {
         <Box sx={{py: 1, backgroundColor: '#fff', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'}}>
             <Container>
                 <Grid container spacing={2} alignItems="center">
-                    {/* Logo Section */}
                     <Grid item xs={6} sm={2}>
                         <Box sx={{width: {xs: '80px', sm: '100px'}}}>
                             <Typography component="img" src={Logo} alt="Logo" sx={{width: '100%', height: 'auto'}}/>
@@ -87,10 +86,11 @@ const Header = () => {
                                                 alignItems: 'center',
                                                 cursor: 'pointer',
                                                 position: 'relative',
+                                                fontSize: '14px',
                                                 '&::after': {
                                                     content: '""',
                                                     position: 'absolute',
-                                                    bottom: 0,
+                                                    top: '240%',
                                                     left: 0,
                                                     width: '0%',
                                                     height: '2px',
@@ -99,10 +99,7 @@ const Header = () => {
                                                 },
                                                 '&:hover::after': {
                                                     width: '100%',
-                                                },
-                                                '&:hover': {
-                                                    color: '#f8c311',
-                                                },
+                                                }
                                             }}
                                         >
                                             {link.label}
@@ -143,10 +140,11 @@ const Header = () => {
                                                                     display: 'inline-block',
                                                                     cursor: 'pointer',
                                                                     position: 'relative',
+                                                                    fontSize: '14px',
                                                                     '&::after': {
                                                                         content: '""',
                                                                         position: 'absolute',
-                                                                        bottom: 0,
+                                                                        bottom: "-1%",
                                                                         left: 0,
                                                                         width: '0%',
                                                                         height: '2px',
@@ -154,11 +152,8 @@ const Header = () => {
                                                                         transition: 'width 0.3s ease',
                                                                     },
                                                                     '&:hover::after': {
-                                                                        width: '100%',
-                                                                    },
-                                                                    '&:hover': {
-                                                                        color: '#f8c311',
-                                                                    },
+                                                                        width: '20px',
+                                                                    }
                                                                 }}
                                                             >
                                                                 {item.label}
@@ -179,11 +174,15 @@ const Header = () => {
                                             color: '#555',
                                             fontWeight: '500',
                                             position: 'relative',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            fontSize: '14px',
                                             '&::after': {
                                                 content: '""',
                                                 position: 'absolute',
-                                                bottom: 0,
-                                                left: 0,
+                                                top: '230%',
+                                                transform: 'translateX(-50%)',
+                                                left: "50%",
                                                 width: '0%',
                                                 height: '2px',
                                                 backgroundColor: '#f8c311',
@@ -191,10 +190,7 @@ const Header = () => {
                                             },
                                             '&:hover::after': {
                                                 width: '100%',
-                                            },
-                                            '&:hover': {
-                                                color: '#f8c311',
-                                            },
+                                            }
                                         }}
                                     >
                                         {link.label}
