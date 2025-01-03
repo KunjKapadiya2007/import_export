@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Box, Typography, Avatar } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import Img from "../../assets/image/home/Clients/img1.png";
 import Img1 from "../../assets/image/home/Clients/img2.png";
 import Img2 from "../../assets/image/home/Clients/img3.png";
@@ -29,20 +33,6 @@ function Clients() {
             class: "Logistic Coordinator",
         },
     ];
-
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, [slides.length]);
-
-    const handleDotClick = (index) => {
-        setCurrentIndex(index);
-    };
 
     return (
         <Box
@@ -96,112 +86,127 @@ function Clients() {
                     </Typography>
                 </Box>
 
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        maxWidth: "960px",
-                        position: "relative",
-                    }}
-                >
-
+                <Box sx={{ display: "flex" }}>
                     <Box
                         sx={{
-                            position: "absolute",
-                            top: "-35%",
-                            left: "-10%",
-                            fontSize: {sm:"80px", md: "80px", lg: "100px" },
+                            fontSize: { sm: "80px", lg: "100px" },
                             color: "#F8C311",
                             letterSpacing: "1px",
                         }}
                     >
                         ❛❛
                     </Box>
-
-                    <Typography
-                        sx={{
-                            fontStyle: "italic",
-                            fontSize: "18px",
-                            marginBottom: "15px",
-                            color: "#555",
+                    <Swiper
+                        modules={[Pagination, Autoplay]}
+                        autoplay={{ delay: 5000, disableOnInteraction: false }}
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                            renderBullet: (index, className) => (
+                                `<span class="${className}"></span>`
+                            ),
                         }}
+                        spaceBetween={30}
+                        style={{ maxWidth: "960px" }}
                     >
-                        "{slides[currentIndex].des}"
-                    </Typography>
-
-                    <Box
-                        sx={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            width: "100%",
-                        }}
-                    >
-                        <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
-                            <Avatar
-                                src={slides[currentIndex].img}
-                                alt={slides[currentIndex].name}
-                                sx={{ width: 70, height: 70 }}
-                            />
-                            <Box sx={{ display: "flex", alignItems: "center" }}>
-                                <Typography
-                                    sx={{
-                                        fontWeight: "bold",
-                                        fontSize: "16px",
-                                        color: "#333",
-                                    }}
-                                >
-                                    {slides[currentIndex].name}
-                                </Typography>
-                                <Typography
-                                    sx={{
-                                        fontWeight: "bold",
-                                        fontSize: "16px",
-                                        color: "#333",
-                                        marginLeft: "5px",
-                                    }}
-                                >
-                                    /
-                                </Typography>
-                                <Typography
-                                    sx={{
-                                        fontSize: "14px",
-                                        color: "#777",
-                                        marginLeft: "5px",
-                                    }}
-                                >
-                                    {slides[currentIndex].class}
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        <Box
-                            sx={{
-                                display: "flex",
-                                gap: "10px",
-                                marginLeft: "-10px",
-                                position: "relative",
-                            }}
-                        >
-                            {slides.map((_, index) => (
+                        {slides.map((slide, index) => (
+                            <SwiperSlide key={index}>
                                 <Box
-                                    key={index}
-                                    onClick={() => handleDotClick(index)}
                                     sx={{
-                                        width: "10px",
-                                        height: "10px",
-                                        borderRadius: "50%",
-                                        backgroundColor:
-                                            currentIndex === index ? "#f9b233" : "#ccc",
-                                        cursor: "pointer",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "flex-start",
+                                        justifyContent: "space-between",
+                                        textAlign: "left",
+                                        padding: "20px",
+                                        gap: "20px",
                                     }}
-                                ></Box>
-                            ))}
-                        </Box>
-                    </Box>
+                                >
+                                    <Typography
+                                        sx={{
+                                            fontStyle: "italic",
+                                            fontSize: "18px",
+                                            marginBottom: "15px",
+                                            color: "#555",
+                                            maxWidth: "100%",
+                                        }}
+                                    >
+                                        "{slide.des}"
+                                    </Typography>
+
+                                    <Box
+                                        sx={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: "15px",
+                                        }}
+                                    >
+                                        <Avatar
+                                            src={slide.img}
+                                            alt={slide.name}
+                                            sx={{ width: 70, height: 70 }}
+                                        />
+                                        <Box
+                                            sx={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: "10px",
+                                            }}
+                                        >
+                                            <Typography
+                                                sx={{
+                                                    fontWeight: "bold",
+                                                    fontSize: "18px",
+                                                    color: "#333",
+                                                }}
+                                            >
+                                                {slide.name}
+                                            </Typography>
+                                            <Typography
+                                                sx={{
+                                                    fontSize: "18px",
+                                                    color: "#777",
+                                                    fontWeight: 400,
+                                                }}
+                                            >
+                                                / {slide.class}
+                                            </Typography>
+                                        </Box>
+                                    </Box>
+                                </Box>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </Box>
             </Box>
+
+            <style>
+                {`
+                    .swiper-pagination {
+                        position: absolute;
+                        top: 50%;
+                        right: 0; /* Align to the right side */
+                        transform: translateY(-50%); /* Vertically center the dots */
+                        padding-right: 10px; /* Add some space from the right edge */
+                    }
+
+                    .swiper-pagination-bullet {
+                        width: 10px; /* Dot size */
+                        height: 10px; /* Dot size */
+                        background-color: transparent; /* Default dot color */
+                        opacity: 0.8; /* Slight opacity */
+                        margin: 0 6px; /* Space between dots */
+                        border: 1px solid #000; /* Border for better visibility */
+                        transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+                    }
+
+                    .swiper-pagination-bullet-active {
+                        background-color: #F8C311 !important; /* Active dot color */
+                        transform: scale(1); /* Slightly larger active dot */
+                        opacity: 1; /* Fully opaque */
+                    }
+                `}
+            </style>
         </Box>
     );
 }
