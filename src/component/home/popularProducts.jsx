@@ -64,7 +64,7 @@ const PopularProducts = () => {
 
     return (
         <Box>
-            <Box sx={{ py: "140px" }}>
+            <Box sx={{ py: "140px" , overflow:"hidden" }}>
                 <Container>
                     <Box>
                         <Typography

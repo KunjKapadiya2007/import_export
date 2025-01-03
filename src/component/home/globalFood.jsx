@@ -12,7 +12,7 @@ const GlobalFood = () => {
                     align="center"
                     gutterBottom
                     sx={{
-                        fontWeight: "bold",
+                        fontWeight: "400",
                         fontSize: { xs: "20px", sm: "25px", md: "30px" },
                         textAlign: "center"
                     }}

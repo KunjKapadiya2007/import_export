@@ -3,7 +3,7 @@ import React from 'react'
 
 const Healthylife = () => {
     return (
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box sx={{ display: "flex", justifyContent: "center" , padding:".05px 0 140px"}}>
             <Box sx={{
                 display: "flex",
                 flexWrap: "wrap",

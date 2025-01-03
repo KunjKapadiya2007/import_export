@@ -179,10 +179,11 @@ const Farmproducts = () => {
                                         textTransform: "uppercase",
                                         textAlign: { xs: "center", sm: "left" }
                                     }}>
-                                        Fresh Ratan House
-                                        <Typography sx={{
+                                        Fresh Ratan House {' '}
+                                        <Typography component={'span'} sx={{
                                             fontSize: { xs: "30px", sm: "40px" },
-                                            textAlign: { xs: "center", sm: "left" }
+                                            textAlign: { xs: "center", sm: "left" },
+                                            fontWeight:100
                                         }}>
                                             farm products
                                         </Typography>
@@ -201,8 +202,7 @@ const Farmproducts = () => {
                                             color: "white",
                                             transition: ".6s",
                                         },
-                                        display: "block",
-                                        margin: "0 auto"
+                                        display: "block"
                                     }}
                                 >
                                     contact us
