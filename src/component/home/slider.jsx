@@ -107,7 +107,6 @@ const Slider = () => {
                   height: { xs: 300, sm: 450, md: 600 },
                   backgroundImage: `url(${slide.image})`,
                   backgroundSize: "cover",
-                  backgroundPosition: "center",
                   position: "relative",
                 }}
               >
@@ -190,11 +189,13 @@ const Slider = () => {
             transform: "translateY(-50%)",
             zIndex: 10,
             color: "#666",
+              justifyContent: "center",
+              alignItems: "center",
             backgroundColor: "#fff",
-            width: "65px",
+            width: "68px",
             height: "65px",
             ":hover": { backgroundColor: "#fff" },
-            display: { xs: "none", md: "block" }
+            display: { xs: "none", md: "flex" }
           }}
         >
           <ArrowBackIosNewIcon />
@@ -208,20 +209,22 @@ const Slider = () => {
             right: 20,
             transform: "translateY(-50%)",
             zIndex: 10,
+              justifyContent: "center",
+              alignItems: "center",
             color: "#666",
             backgroundColor: "#fff",
-            width: "65px",
+            width: "68px",
             height: "65px",
             ":hover": { backgroundColor: "#fff" },
-            display: { xs: "none", md: "block" }
+            display: { xs: "none", md: "flex" }
           }}
         >
           <ArrowForwardIosIcon />
         </IconButton>
       </Box>
 
-      <Box sx={{ pt: 2 }}>
-        <Container maxWidth="xl">
+      <Box sx={{ padding:"15px 15px 0 15px" }}>
+        {/*<Container maxWidth="xl">*/}
           <Grid container spacing={2}>
             {products.map((product, index) => (
               <Grid item xs={12} sm={4} key={index}>
@@ -239,7 +242,7 @@ const Slider = () => {
               </Grid>
             ))}
           </Grid>
-        </Container>
+        {/*</Container>*/}
       </Box>
 
 
