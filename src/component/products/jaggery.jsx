@@ -226,11 +226,11 @@ const singleProducts = products.find((item)=>(item.url === name))
                             <Grid item xs={12} sm={6} md={4} key={index}>
                                 <Box
                                     sx={{
-                                        border: "1px solid #B0B0B0",
+                                        border: "1px solid #e5e5e5",
                                         transition: ".5s",
                                         '&:hover': {
                                             background: "rgba(255, 255, 255, 0.1)",
-                                            boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.17)",
+                                            boxShadow: "0 8px 32px 0 rgba(80, 79, 79, 0.28)",
                                             backdropFilter: "blur(0px)",
                                             WebkitBackdropFilter: "blur(0px)",
                                             border: "1px solid rgba(255, 255, 255, 0.18)",
@@ -367,7 +367,6 @@ const singleProducts = products.find((item)=>(item.url === name))
             </Box>
 
             <Box>
-                <Container maxWidth="xl">
                     <Grid container>
                         <Grid item xs={12} md={6}>
                             <Box
@@ -404,7 +403,6 @@ const singleProducts = products.find((item)=>(item.url === name))
                             </Box>
                         </Grid>
                     </Grid>
-                </Container>
             </Box>
 
         </>

@@ -7,7 +7,7 @@ function HeroSection({ backgroundImage, title, subtitle, textColor, height, widt
             sx={{
                 backgroundImage: `url(${backgroundImage})`,
                 width: width || "100%",
-                height: height || "auto",
+                // height: height || "auto",
                 py: { xs: 10, sm: 18 },
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -32,9 +32,9 @@ function HeroSection({ backgroundImage, title, subtitle, textColor, height, widt
                         variant="h1"
                         sx={{
                             fontSize: { xs: '35px', sm: '50px'},
-                            fontWeight: 800,
+                            fontWeight: 900,
                             textTransform: 'uppercase',
-                            width: {md:"650px" , sm:"390px" , xs:"280px"}
+                            width: {sm:"450px", xs:"250px"}
                         }}
                     >
                         {title}

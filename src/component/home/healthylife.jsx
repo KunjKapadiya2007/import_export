@@ -1,49 +1,30 @@
-import { Box, Typography } from '@mui/material'
-import React from 'react'
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import healthyLifeImage from "../../assets/image/home/health/img1.png";
 
-const Healthylife = () => {
+const HealthyLifeBanner = () => {
     return (
-        <Box sx={{ display: "flex", justifyContent: "center" , padding:".05px 0 140px"}}>
-            <Box sx={{
+        <Box
+            sx={{
                 display: "flex",
-                flexWrap: "wrap",
-                width: { xs: "100%", sm: "80%", md: "50%" },  // Adjust width on different screen sizes
-                gap: "20px",
-                justifyContent: "center"
-            }}>
-                <Typography sx={{
-                    fontSize: { xs: "3.5rem", sm: "5rem", md: "6.5rem" },
-                    color: "#635729"
-                }}>
-                    Healthy
-                </Typography>
-                <Typography sx={{
-                    fontSize: { xs: "3.5rem", sm: "5rem", md: "6.5rem" },
-                    color: "#ff6262"
-                }}>
-                    life
-                </Typography>
-                <Typography sx={{
-                    fontSize: { xs: "3.5rem", sm: "5rem", md: "6.5rem" },
-                    color: "#ffbb4c"
-                }}>
-                    with
-                </Typography>
-                <Typography sx={{
-                    fontSize: { xs: "3.5rem", sm: "5rem", md: "6.5rem" },
-                    color: "#fcdb5a"
-                }}>
-                    fresh
-                </Typography>
-                <Typography sx={{
-                    fontSize: { xs: "3.5rem", sm: "5rem", md: "6.5rem" },
-                    color: "#5e9a4b"
-                }}>
-                    products
-                </Typography>
-            </Box>
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "0 0 50px",
+                backgroundColor: "#fff",
+                pb:"140px"
+            }}
+        >
+            <Typography
+                component="img"
+                src={healthyLifeImage}
+                alt="Healthy Life with Fresh Products"
+                sx={{
+                    width: "100%",
+                    height: "auto",
+                }}
+            />
         </Box>
-    )
-}
+    );
+};
 
-export default Healthylife
+export default HealthyLifeBanner;

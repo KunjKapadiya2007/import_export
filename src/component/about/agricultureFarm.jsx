@@ -17,6 +17,33 @@ function AgricultureFarm() {
         threshold: 0.1,    // Fires when 10% of the component is in view
     });
 
+    const farm = [
+        {
+            description:"Established in March 2014, Ratan House has quickly become a trusted name" +
+                " in the global food industry. With a mission to provide top-quality food services, " +
+                "we have positioned ourselves as leading exporters of diverse agricultural products," +
+                " catering to a wide range of global markets."
+        },
+        {
+            description:"We are committed to delivering excellence through strategic planning," +
+                " storytelling, and integrated solutions across web, mobile, and real-world applications." +
+                " Our focus is on bringing value to brands and consumers alike."
+        },
+        {
+            description:"Our team is driven by a passion for creating products with real value." +
+                " This has led us to build a multi-talented group that excels in various domains, " +
+                "from cultivating high-quality agricultural products to innovative packaging and efficient" +
+                " logistics. Whether it’s developing advanced agricultural practices or ensuring seamless " +
+                "distribution, we are dedicated to making a significant impact."
+        },
+        {
+            description:"We offer a comprehensive range of agricultural products and services designed " +
+                "to meet the needs of a global audience. Our expertise extends from production and processing" +
+                " to export and market delivery. Join us in our mission to deliver exceptional agricultural " +
+                "solutions and make a positive impact on the world."
+        },
+    ]
+
     return (
         <>
             <Box
@@ -53,18 +80,18 @@ function AgricultureFarm() {
                                         Agriculture Farm
                                     </Typography>
                                 </Typography>
-                                <Box sx={{ marginTop: '20px' }}>
-                                    <Typography paragraph>
-                                        Established in March 2014, Ratan House has quickly become a trusted name in the
-                                        global food industry. With a mission to provide top-quality food services, we
-                                        have positioned ourselves as leading exporters of diverse agricultural products,
-                                        catering to a wide range of global markets.
-                                    </Typography>
-                                    <Typography paragraph>
-                                        We are committed to delivering excellence through strategic planning,
-                                        storytelling, and integrated solutions across web, mobile, and real-world
-                                        applications. Our focus is on bringing value to brands and consumers alike.
-                                    </Typography>
+                                <Box sx={{ marginTop: '20px'  }}>
+                                    {farm.map((item,index) => (
+                                        <Box sx={{
+                                            margin: '25px 0',
+                                            fontSize:"14px",
+                                            lineHeight: '1.6',
+                                            fontWeight:"400",
+                                            color:"#666"
+                                        }}>
+                                            {item.description}
+                                        </Box>
+                                    ))}
                                 </Box>
                                 <Box
                                     sx={{
