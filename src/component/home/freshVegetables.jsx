@@ -8,7 +8,6 @@ const FreshVegetables = () => {
             <Container>
                 <Box>
                     <Grid container spacing={2} alignItems="center">
-                        {/* Left Section */}
                         <Grid item xs={12} md={6}>
                             <Typography variant="h6" color="textSecondary" gutterBottom>
                                 A House of Agro Products
@@ -56,7 +55,6 @@ const FreshVegetables = () => {
                             </Button>
                         </Grid>
 
-                        {/* Right Section */}
                         <Grid item xs={12} md={6}>
                             <img
                                 src={img}
