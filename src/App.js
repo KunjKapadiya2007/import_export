@@ -19,7 +19,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/:name/products" element={<Products />} />
+                <Route path="/products/:name" element={<Products />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/get-in-touch" element={<GetinTouch />} />
                 {/* Add NotFound route */}

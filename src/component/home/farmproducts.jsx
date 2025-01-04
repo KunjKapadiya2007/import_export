@@ -10,8 +10,11 @@ import product4 from '../../assets/image/homepage/11.png'
 import product5 from '../../assets/image/homepage/12.png'
 import product6 from '../../assets/image/homepage/13.png'
 import product7 from '../../assets/image/homepage/14.png'
+import {useNavigate} from "react-router-dom";
 
 const Farmproducts = () => {
+
+    const navigate = useNavigate();
 
     const products = [
         {
@@ -97,6 +100,7 @@ const Farmproducts = () => {
                                         },
                                         display: "block"
                                     }}
+                                    onClick={() => navigate('/contact')}
                                 >
                                     contact us
                                 </Button>

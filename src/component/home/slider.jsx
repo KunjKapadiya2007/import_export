@@ -15,11 +15,13 @@ import sliderImage4 from "../../assets/image/homepage/sliderImage4.png";
 import jaggery from '../../assets/image/homepage/jaggery.png'
 import rice from '../../assets/image/homepage/rice.png'
 import wheat from '../../assets/image/homepage/wheat.png'
+import {useNavigate} from "react-router-dom";
 
 const Slider = () => {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
     const [swiperInstance, setSwiperInstance] = React.useState(null);
+    const navigate = useNavigate();
 
     React.useEffect(() => {
         if (swiperInstance) {
@@ -71,16 +73,19 @@ const Slider = () => {
             image: jaggery,
             title: "Jaggery",
             subtitle: "Natural sweetness, pure goodness",
+            path:"/products/jaggery",
         },
         {
             image: rice,
             title: "Rice",
             subtitle: "The foundation of every meal",
+            path:"/products/rice",
         },
         {
             image: wheat,
             title: "Wheat Flour",
             subtitle: "The heart of wholesome baking",
+            path:"/products/wheat-flour",
         },
     ];
 
@@ -186,7 +191,7 @@ const Slider = () => {
                     sx={{
                         position: "absolute",
                         top: "50%",
-                        left: 20,
+                        left: 30,
                         transform: "translateY(-50%)",
                         zIndex: 10,
                         color: "#666",
@@ -207,7 +212,7 @@ const Slider = () => {
                     sx={{
                         position: "absolute",
                         top: "50%",
-                        right: 20,
+                        right: 30,
                         transform: "translateY(-50%)",
                         zIndex: 10,
                         justifyContent: "center",
@@ -225,7 +230,6 @@ const Slider = () => {
             </Box>
 
             <Box sx={{padding: "15px 15px 0 15px"}}>
-                {/*<Container maxWidth="xl">*/}
                 <Grid container spacing={2}>
                     {products.map((product, index) => (
                         <Grid item xs={12} sm={4} key={index}>
@@ -239,13 +243,13 @@ const Slider = () => {
                                         height: "auto",
                                         cursor: "pointer",
                                     }}
+                                    onClick={() => navigate(product.path)}
                                 />
                             </Box>
                         </Grid>
                     ))}
                 </Grid>
-                {/*</Container>*/}
-            </Box>
+                </Box>
 
 
         </Box>

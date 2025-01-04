@@ -43,8 +43,7 @@ const Navigation = () => {
     const navLinks = [
         {label: 'Home', href: '/'},
         {label: 'About', href: '/about'},
-        {label: 'Products', href: '/:name/products', dropdown: true},
-        {label: 'Certificate', href: '/certificate'},
+        {label: 'Products', href: '/products/:name', dropdown: true},
         {label: 'Contact', href: '/contact'},
     ];
 
@@ -62,7 +61,6 @@ const Navigation = () => {
                         </Box>
                     </Grid>
 
-                    {/* Desktop Navigation */}
                     <Grid
                         item
                         xs={0}
@@ -89,6 +87,7 @@ const Navigation = () => {
                                                 cursor: 'pointer',
                                                 position: 'relative',
                                                 fontSize: '14px',
+                                                transition: '0.5s',
                                                 '&::after': {
                                                     content: '""',
                                                     position: 'absolute',
@@ -101,7 +100,12 @@ const Navigation = () => {
                                                 },
                                                 '&:hover::after': {
                                                     width: '100%',
-                                                }
+                                                },
+                                                '&:hover ~ .submenu': {
+                                                    transform: 'translateY(0%) !important',
+                                                    opacity: '1 !important',
+                                                    visibility: 'visible !important',
+                                                },
                                             }}
                                         >
                                             {link.label}
@@ -110,6 +114,7 @@ const Navigation = () => {
 
                                         {isMegaMenuOpen && (
                                             <Box
+                                                className={'submenu'}
                                                 sx={{
                                                     position: 'absolute',
                                                     top: '100%',
@@ -120,16 +125,20 @@ const Navigation = () => {
                                                     zIndex: 10,
                                                     width: '250px',
                                                     p: 1,
+                                                    transform: 'translateY(10%)',
+                                                    opacity: 0,
+                                                    visibility: 'hidden',
+                                                    transition: '0.5s',
                                                 }}
                                             >
                                                 <List>
                                                     {[
-                                                        {label: 'Jaggery & Molasses', path: '/jaggery/products'},
-                                                        {label: 'Rice', path: '/rice/products'},
-                                                        {label: 'Wheat Flour', path: '/wheat-flour/products'},
-                                                        {label: 'Vegetables', path: '/vegetables/products'},
-                                                        {label: 'Sweet Corns', path: '/sweet-corns/products'},
-                                                        {label: 'Pulses', path: '/pulses/products'},
+                                                        { label: 'Jaggery & Molasses', path: '/products/jaggery' },
+                                                        { label: 'Rice', path: '/products/rice' },
+                                                        { label: 'Wheat Flour', path: '/products/wheat-flour' },
+                                                        { label: 'Vegetables', path: '/products/vegetables' },
+                                                        { label: 'Sweet Corns', path: '/products/sweet-corns' },
+                                                        { label: 'Pulses', path: '/products/pulses' },
                                                     ].map((item, index) => (
                                                         <ListItem key={index}>
                                                             <Typography
@@ -155,7 +164,7 @@ const Navigation = () => {
                                                                     },
                                                                     '&:hover::after': {
                                                                         width: '20px',
-                                                                    }
+                                                                    },
                                                                 }}
                                                             >
                                                                 {item.label}
@@ -262,7 +271,7 @@ const Navigation = () => {
                                                         }}
                                                     />
                                                 </Typography>
-                                                {/* Dropdown Menu */}
+
                                                 {dropdownOpen && (
                                                     <Box
                                                         sx={{
@@ -299,7 +308,7 @@ const Navigation = () => {
                                                 )}
                                             </Box>
                                         ) : (
-                                            // Regular Menu Item
+
                                             <Typography
                                                 key={index}
                                                 component="a"
@@ -319,7 +328,7 @@ const Navigation = () => {
                                             </Typography>
                                         )
                                     )}
-                                    {/* Call to Action */}
+
                                     <ListItem>
                                         <Button
                                             variant="outlined"

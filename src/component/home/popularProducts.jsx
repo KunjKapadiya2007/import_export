@@ -36,7 +36,6 @@ const PopularProducts = () => {
                     sx={{
                         margin: { lg: "0 163px", md: "0 100px", sm: "0 50px", xs: "0 22px" },
                         padding: "0 15px",
-                        overflow: "hidden",
                     }}
                 >
                     <Container>
@@ -72,7 +71,7 @@ const PopularProducts = () => {
                                             sx={{
                                                 height: "100%",
                                                 width: "100%",
-                                                border: "1px solid #e5e5e5", // Consistent border
+                                                border: "1px solid #e5e5e5",
                                                 overflow: "hidden",
                                                 ":hover": {
                                                     boxShadow: "0 0 10px rgba(80, 79, 79, 0.28)",
@@ -104,7 +103,10 @@ const PopularProducts = () => {
                                                         fontSize: "16px",
                                                         color: "#333333",
                                                         fontWeight: "bold",
-                                                        ":hover": { color: "#F8C311", transition: ".3s" },
+                                                        transition: ".3s",
+                                                        ":hover": {
+                                                            color: "#F8C311",
+                                                        },
                                                         cursor: "pointer",
                                                         textAlign: "start",
                                                         margin: "0 0 5px",

@@ -3,6 +3,7 @@ import { Box, Container, Typography, Grid } from '@mui/material';
 import bgImg1 from '../../assets/image/about/img1.png';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import {useNavigate} from "react-router-dom";
 
 function AgricultureFarm() {
     const number = [
@@ -16,6 +17,8 @@ function AgricultureFarm() {
         triggerOnce: true, // Ensures animation triggers only once when in view
         threshold: 0.1,    // Fires when 10% of the component is in view
     });
+
+    const navigate = useNavigate();
 
     const farm = [
         {
@@ -106,7 +109,9 @@ function AgricultureFarm() {
                                         transition: '.6s',
                                         '&:hover': { backgroundColor: '#FFC107', color: '#fff' },
                                     }}
+                                    onClick={() => navigate('/contact')}
                                 >
+
                                     GET IN TOUCH
                                 </Box>
                             </Box>
