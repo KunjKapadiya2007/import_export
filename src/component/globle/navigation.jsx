@@ -50,7 +50,7 @@ const Navigation = () => {
     const isMegaMenuOpen = Boolean(anchorEl);
 
     return (
-        <Box sx={{py: 1, backgroundColor: '#fff', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'}}>
+        <Box sx={{py: 1, backgroundColor: '#fff', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' ,position: 'sticky' , top:"0", width: '100%',zIndex:"1000"}}>
             <Container>
                 <Grid container spacing={2} alignItems="center">
                     <Grid item xs={6} sm={2}>
