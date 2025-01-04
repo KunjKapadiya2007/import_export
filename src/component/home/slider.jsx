@@ -84,7 +84,6 @@ const Slider = () => {
         },
     ];
 
-
     return (
         <Box sx={{mb: 9}}>
             <Box
