@@ -13,16 +13,12 @@ const App = () => {
         <>
             <Navigation />
 
-
-
-
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/products/:name" element={<Products />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/get-in-touch" element={<GetinTouch />} />
-                {/* Add NotFound route */}
                 <Route path="*" element={<div>Page Not Found</div>} />
             </Routes>
 

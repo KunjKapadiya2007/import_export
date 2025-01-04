@@ -177,6 +177,7 @@ const Slider = () => {
                                                 transition: ".6s",
                                             },
                                         }}
+                                        onClick={() => navigate("/about")}
                                     >
                                         {slide.buttonText}
                                     </Button>
