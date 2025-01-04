@@ -6,6 +6,7 @@ import Farmproducts from '../component/home/farmproducts'
 import Healthylife from '../component/home/healthylife'
 import FreshVegetables from '../component/home/freshVegetables'
 import Clients from "../component/home/Clients";
+import Company from "../component/globle/Company";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <Healthylife />
         <FreshVegetables />
         <Clients/>
+        <Company/>
     </div>
   )
 }

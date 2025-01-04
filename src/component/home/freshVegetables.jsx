@@ -2,8 +2,12 @@ import React from 'react';
 import { Grid, Typography, Button, Box, Container } from '@mui/material';
 import img from '../../assets/image/homepage/banner_bg_5.jpg'
 import logo from '../../assets/image/home/freshVagetables.jsx/logo.png'
+import {useNavigate} from "react-router-dom";
 
 const FreshVegetables = () => {
+
+    const navigate = useNavigate();
+
     return (
         <Box sx={{ backgroundColor: '#f5f5f5' , position: "relative", overflow: "hidden" , margin: {md:"0 15px" , xs:"0"} }}>
             <Container>
@@ -83,6 +87,7 @@ const FreshVegetables = () => {
                                             color: '#fff',
                                         },
                                     }}
+                                    onClick={() => navigate('/products/vegetables')}
                                 >
                                     Shop Now
                                 </Button>

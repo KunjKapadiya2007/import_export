@@ -4,6 +4,7 @@ import House from "../component/about/house";
 import OurPartners from "../component/about/ourPartners";
 import bgimg from "../assets/image/about/aboutHeader..jpg";
 import HeroSection from "../component/globle/heroSection";
+import Company from "../component/globle/Company";
 
 function About(props) {
     return (
@@ -19,6 +20,7 @@ function About(props) {
             <AgricultureFarm/>
             <House/>
             <OurPartners/>
+            <Company/>
         </>
     );
 }
