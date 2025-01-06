@@ -238,24 +238,17 @@ const singleProducts = products.find((item)=>(item.url === name))
                                     }}
                                 >
                                     <Box sx={{
-                                        height: {sm: "180px", xs: "150px"},
-                                        width: {sm: "180px", xs: "150px"},
                                         display: "flex",
                                         justifyContent: "center",
                                         alignItems: "center",
-                                        margin: {
-                                            lg: "60px 89px 60px 89px",
-                                            md: "38px 54px 38px 54px",
-                                            sm: "55px 74px",
-                                            xs: "60px 60px"
-                                        },
+                                        padding: "40px 0",
                                     }}>
                                         <img
                                             src={item.img}
                                             alt={item.title}
                                             style={{
-                                                width: "100%",
-                                                height: "100%",
+                                                width: "180px",
+                                                height: "180px",
                                                 objectFit: "cover",
                                             }}
                                         />

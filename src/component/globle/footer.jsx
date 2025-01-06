@@ -45,7 +45,7 @@ const Footer = () => {
             <Box sx={{ margin: { md: "0 120px" } }}>
                 <Container maxWidth="lg">
                     <Grid container>
-                        {/* Logo Section */}
+
                         <Grid item xs={12} sm={3} lg={2} sx={{ textAlign: 'center' }}>
                             <Link href="/">
                                 <Box component="img" src={footerData.logo} alt="Logo"
@@ -53,7 +53,6 @@ const Footer = () => {
                             </Link>
                         </Grid>
 
-                        {/* Menu, Categories, and Products Sections */}
                         <Grid item xs={12} sm={6} lg={7}>
                             <Grid container spacing={6}>
                                 {/* Menu Section */}
@@ -103,7 +102,6 @@ const Footer = () => {
                                     ))}
                                 </Grid>
 
-                                {/* Products Section */}
                                 <Grid item xs={12} sm={4} lg={3}>
                                     <Typography variant="h6"
                                                 sx={{ color: '#F8C311', fontSize: '16px', fontWeight: 'bold', mb: 2 }}>
@@ -122,14 +120,13 @@ const Footer = () => {
                                                 '&:hover': { color: '#F8C311', cursor: 'pointer' },
                                             }}
                                         >
-                                            {item.label} {/* Updated to reference item.label */}
+                                            {item.label}
                                         </Link>
                                     ))}
                                 </Grid>
                             </Grid>
                         </Grid>
 
-                        {/* Contact Section */}
                         <Grid item xs={12} sm={12} lg={3}>
                             <Typography variant="h6"
                                         sx={{ color: '#F8C311', fontSize: '16px', fontWeight: 'bold', mb: 2 }}>
@@ -180,7 +177,6 @@ const Footer = () => {
                         </Grid>
                     </Grid>
 
-                    {/* Footer Note */}
                     <Box textAlign="center" mt={4} borderTop="1px solid #566573" pt={2}>
                         <Typography sx={{ fontSize: '14px', color: '#FFF' }}>{footerData.footerNote}</Typography>
                     </Box>

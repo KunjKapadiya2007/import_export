@@ -7,7 +7,6 @@ function HeroSection({ backgroundImage, title, subtitle, textColor, height, widt
             sx={{
                 backgroundImage: `url(${backgroundImage})`,
                 width: width || "100%",
-                // height: height || "auto",
                 py: { xs: 10, sm: 18 },
                 backgroundSize: "cover",
                 backgroundPosition: "center",

@@ -96,9 +96,9 @@ function Company() {
             <style>
                 {`
                     .swiper-pagination-bullet {
-                        width: 10px; /* Dot size */
-                        height: 10px; /* Dot size */
-                        background-color: #ccc; /* Default dot color */
+                        width: 9px; /* Dot size */
+                        height: 9px; /* Dot size */
+                        background-color: transparent; /* Default dot color */
                         opacity: 0.8; /* Slight opacity */
                         margin: 0 6px; /* Space between dots */
                         border: 1px solid #000; /* Border for better visibility */
@@ -106,9 +106,10 @@ function Company() {
                     }
 
                     .swiper-pagination-bullet-active {
-                        background-color: #F8C311 !important; /* Active dot color */
-                        transform: scale(1.2); /* Slightly larger active dot */
-                        opacity: 1; /* Fully opaque */
+                        background-color: #F8C311 !important;
+                        transform: scale(1.2);
+                        opacity: 1; 
+                        // border : none !important;
                     }
                 `}
             </style>
